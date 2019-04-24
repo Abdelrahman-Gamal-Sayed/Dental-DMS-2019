@@ -136,11 +136,12 @@ namespace ONA_Clinics
             this.WindowState = WindowState.Minimized;
         }
 
+     
         private void txtCard_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                DataTable dtinformation = db.RunReader("select  to_char(BIRTH_DATE,'DD-MM-YYYY'),C_COMP_ID,CLASS_CODE,NVL(to_char(SPECIFIC_DATE,'DD-MM-YYYY'),to_char(INS_START_DATE,'DD-MM-YYYY')),to_char(INS_END_DATE,'DD-MM-YYYY'),TERMINATE_FLAG ,EMP_ANAME_ST ,EMP_ANAME_SC,EMP_ANAME_TH ,EMP_ENAME_ST ,EMP_ENAME_SC,EMP_ENAME_TH, to_char(INS_START_DATE,'DD-MM-YYYY'), to_char(TERMINATE_DATE,'DD-MM-YYYY') from COMP_EMPLOYEESS where CARD_ID='" + txtCard.Text + "' order by ins_start_date DESC");
+                DataTable dtinformation = db.RunReader("select  to_char(BIRTH_DATE,'DD-MM-YYYY'),C_COMP_ID,CLASS_CODE,NVL(to_char(SPECIFIC_DATE,'DD-MM-YYYY'),to_char(INS_START_DATE,'DD-MM-YYYY')),to_char(INS_END_DATE,'DD-MM-YYYY'),TERMINATE_FLAG ,EMP_ANAME_ST ,EMP_ANAME_SC,EMP_ANAME_TH ,EMP_ENAME_ST ,EMP_ENAME_SC,EMP_ENAME_TH, to_char(INS_START_DATE,'DD-MM-YYYY'), to_char(TERMINATE_DATE,'DD-MM-YYYY') from  dms_test.COMP_EMPLOYEES where CARD_ID='" + txtCard.Text + "' order by ins_start_date DESC");
 
                 if (dtinformation.Rows.Count > 0 && Convert.ToDateTime(dtinformation.Rows[0][4]).Date < DateTime.Now.Date)
                     MessageBox.Show("خارج التغطية التامينية");
@@ -150,12 +151,14 @@ namespace ONA_Clinics
                 }
                 else if (dtinformation.Rows.Count > 0)
                 {
-                    string comp = "", cont = "", cls = "", maxamt = "", conirs = "", conon = "", cononothr = "", cononmed = "", conuse = "", avilabl = "";
+                    //string comp = "", cont = "", cls = "", maxamt = "", conirs = "", conon = "", cononothr = "", cononmed = "", conuse = "", avilabl = "";
                     //comp = txtCard.Text.Substring(0, txtCard.Text.IndexOf('-'));
 
+                    string cononmed = "", cononothr = "";
+                    Patient.Card_NO = txtCard.Text;
                     txtBirthDate.Text = dtinformation.Rows[0][0].ToString();
                     Patient.Comp_id = dtinformation.Rows[0][1].ToString();
-                    txtCompName.Text = db.RunReader(@"select C_ENAME from V_COMPANIES  WHERE  C_COMP_ID  = '" + comp + "'").Rows[0][0].ToString();
+                    txtCompName.Text = db.RunReader(@"select C_ENAME from dms_test.CONTRACT_COMP  WHERE  C_COMP_ID  = '" + Patient.Comp_id + "'").Rows[0][0].ToString();
                     txtAge.Text = (DateTime.Now.Year - Convert.ToDateTime(dtinformation.Rows[0][0]).Year).ToString();
                     Patient.Class_Code = dtinformation.Rows[0][2].ToString();
                     txtContractStartDate.Text = dtinformation.Rows[0][3].ToString();
@@ -163,11 +166,13 @@ namespace ONA_Clinics
                     Patient.AName = dtinformation.Rows[0][6].ToString() + " " + dtinformation.Rows[0][7].ToString() + " " + dtinformation.Rows[0][8].ToString();
                     Patient.EName = dtinformation.Rows[0][9].ToString() + " " + dtinformation.Rows[0][10].ToString() + " " + dtinformation.Rows[0][11].ToString();
 
+                    txtEName.Text = Patient.EName;
+                    txtAName.Text = Patient.AName;
 
-                    Patient.Contract_NO = db.RunReader("select max(contract_no) from COMP_EMPLOYEESS where C_COMP_ID='" + comp + "'").Rows[0][0].ToString();
-                    Patient.Max_Amount = db.RunReader("select MAX_AMOUNT from V_P_COMP_CONTRACT_CLASS where C_COMP_ID='" + comp + "' and CONTRACT_NO='" + cont + "' and CLASS_CODE='" + cls + "'").Rows[0][0].ToString();
+                    Patient.Contract_NO = db.RunReader("select max(contract_no) from  dms_test.COMP_EMPLOYEES  where C_COMP_ID='" + Patient.Comp_id + "'").Rows[0][0].ToString();
+                    Patient.Max_Amount = db.RunReader("select MAX_AMOUNT from DMS_TEST.COMP_CONTRACT_CLASS where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "'").Rows[0][0].ToString();
 
-                    DataTable dtirs = db.RunReader("select TOT_NET_AMT from IRS_CONSUMPTION where CARD_NO = '" + comp + "' and CONTRACT_NO = (select max(CONTRACT_NO) FROM IRS_CONSUMPTION where CARD_NO = '" + txtCard.Text + "') AND to_date(CON_END_DATE) > to_date(sysdate) ");
+                    DataTable dtirs = db.RunReader("select TOT_NET_AMT from IRS_CONSUMPTION where CARD_NO = '" + Patient.Comp_id + "' and CONTRACT_NO = (select max(CONTRACT_NO) FROM IRS_CONSUMPTION where CARD_NO = '" + Patient.Card_NO + "') AND to_date(CON_END_DATE) > to_date(sysdate) ");
                     // System.Data.DataTable dton = db.RunReader("select TOT_AMOUNT from ONLINE_CONS_02 where CARD_NO = '" + cbxindtyp1_Copy1.Text + "'").Result;
 
 
@@ -190,14 +195,29 @@ namespace ONA_Clinics
                         Patient.Consumption_Total = (Convert.ToDouble(Patient.Consumption_IRS) + Convert.ToDouble(Patient.Consumption_Online)).ToString();
 
                         Patient.Available = (Convert.ToDouble(Patient.Max_Amount) - Convert.ToDouble(Patient.Consumption_Total)).ToString();
+
                     }
                     catch { }
+
+                    DataTable aaa = new DataTable();
+                    aaa = db.RunReader(@"SELECT COPAY_PERC, MAX_AMOUNT, COPAY_AMT, SERV_CODE FROM COMP_CONTRACT_CLASS_PROVIDER 
+                                         WHERE COMP_ID= '" + Patient.Comp_id + "' AND CONTRACT_NO = '" + Patient.Contract_NO + "' AND CLASS_CODE = '" + Patient.Class_Code + "' AND PR_CODE = '" + User.Provider_Code + "' AND SERV_CODE = '11204'");
+                    if (aaa.Rows.Count == 0)
+                        aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, SER_SERV from DMS_TEST.COMP_CUSTOMIZED_D_D_EMP where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and SER_SERV='11204' AND CARD_ID = '" + txtCard.Text + "'");
+                    else if (aaa.Rows.Count == 0)
+                        aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, SER_SERV from DMS_TEST.COMP_CUSTOMIZED_D_D where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and SER_SERV='11204'");
+                    //   else if (aaa.Rows.Count == 0)
+                    // aaa = db.RunReader("select CEILING_PERT,CEILING_AMT, CARR_AMT from V_P_COMP_CUSTOMIZED_D where C_COMP_ID='" + Patient.Comp_id  + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and SER_SERV='11204'");
+
+                    else if (aaa.Rows.Count == 0)
+                    {
+                        MessageBox.Show("هذا الكارت غير متاح له هذه الخدمة");
+                    }
                 }
                 else
                     MessageBox.Show("هذا الكارت غير موجود من فضلك تأكد من رقم الكارت");
             }
         }
-
 
         //private void txtCard_KeyDown(object sender, KeyEventArgs e)
         //{
