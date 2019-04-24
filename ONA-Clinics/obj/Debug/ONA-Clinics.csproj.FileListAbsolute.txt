@@ -1,0 +1,252 @@
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\bin\Debug\ONA-Clinics.exe.config
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\bin\Debug\ONA-Clinics.exe
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\bin\Debug\ONA-Clinics.pdb
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\obj\Debug\ONA-Clinics.csprojResolveAssemblyReference.cache
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\obj\Debug\App.g.cs
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\obj\Debug\ONA-Clinics_MarkupCompile.cache
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\obj\Debug\ONA-Clinics.g.resources
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\obj\Debug\ONA_Clinics.Properties.Resources.resources
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\obj\Debug\ONA-Clinics.csproj.GenerateResource.Cache
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\obj\Debug\ONA-Clinics.exe
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\obj\Debug\ONA-Clinics.pdb
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\bin\Debug\MaterialDesignColors.dll
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.dll
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\bin\Debug\MaterialDesignColors.pdb
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.pdb
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.xml
+c:\users\abdelrahman\documents\visual studio 2013\Projects\ONA-Clinics\ONA-Clinics\obj\Debug\App.baml
+C:\Users\Abdelrahman\Documents\Visual Studio 2013\Projects\ONA-Clinics\ONA-Clinics\obj\Debug\LogIn.baml
+C:\Users\Abdelrahman\Documents\Visual Studio 2013\Projects\ONA-Clinics\ONA-Clinics\obj\Debug\LogIn.g.cs
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\bin\Debug\ONA-Clinics.exe.config
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\ONA-Clinics.exe
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\ONA-Clinics.pdb
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\bin\Debug\ONA-Clinics.exe
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\bin\Debug\ONA-Clinics.pdb
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\bin\Debug\MaterialDesignColors.dll
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\ONA-Clinics.csprojResolveAssemblyReference.cache
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\LogIn.baml
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\App.baml
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\LogIn.g.cs
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\App.g.cs
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\ONA-Clinics_MarkupCompile.cache
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\ONA-Clinics.g.resources
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\ONA_Clinics.Properties.Resources.resources
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\ONA-Clinics.csproj.GenerateResource.Cache
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\BasicData.baml
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\BasicData.g.cs
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\Admin.baml
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\Admin.g.cs
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\form1.baml
+C:\Users\Abdelrahman\Desktop\ONA-Clinics\ONA-Clinics\obj\Debug\form1.g.cs
+C:\Users\Abdelrahman\Desktop\ONA\Clinics\ONA V 1.2\ONA-Clinics\bin\Debug\ONA-Clinics.exe.config
+C:\Users\Abdelrahman\Desktop\ONA\Clinics\ONA V 1.2\ONA-Clinics\obj\Debug\ONA-Clinics.exe
+C:\Users\Abdelrahman\Desktop\ONA\Clinics\ONA V 1.2\ONA-Clinics\obj\Debug\ONA-Clinics.pdb
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\ONA-Clinics.exe.config
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\ONA-Clinics.exe
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\ONA-Clinics.pdb
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\ONA-Clinics.exe
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\ONA-Clinics.pdb
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\MaterialDesignColors.dll
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.dll
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\MaterialDesignColors.pdb
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.pdb
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.xml
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\ONA-Clinics.csprojResolveAssemblyReference.cache
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\Admin.baml
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\BasicData.baml
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\form1.baml
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\LogIn.baml
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\App.baml
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\Admin.g.cs
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\BasicData.g.cs
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\form1.g.cs
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\LogIn.g.cs
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\App.g.cs
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\ONA-Clinics_MarkupCompile.cache
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\ONA-Clinics.g.resources
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\ONA_Clinics.Properties.Resources.resources
+F:\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\ONA-Clinics.csproj.GenerateResource.Cache
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\ONA-Clinics.exe.config
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\ONA-Clinics.exe
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\ONA-Clinics.pdb
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\ONA-Clinics.exe
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\ONA-Clinics.pdb
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\MaterialDesignColors.dll
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\Admin.baml
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\BasicData.baml
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\form1.baml
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\LogIn.baml
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\App.baml
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\Admin.g.cs
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\BasicData.g.cs
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\form1.g.cs
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\LogIn.g.cs
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\App.g.cs
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\ONA-Clinics_MarkupCompile.cache
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\ONA-Clinics.g.resources
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\ONA_Clinics.Properties.Resources.resources
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\ONA-Clinics.csproj.GenerateResource.Cache
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2\ONA-Clinics\obj\Debug\ONA-Clinics.csprojResolveAssemblyReference.cache
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 ag\ONA-Clinics\bin\Debug\ONA-Clinics.exe.config
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 ag\ONA-Clinics\obj\Debug\ONA-Clinics.exe
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 ag\ONA-Clinics\obj\Debug\ONA-Clinics.pdb
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\bin\Debug\ONA-Clinics.exe.config
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\ONA-Clinics.exe
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\ONA-Clinics.pdb
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\bin\Debug\ONA-Clinics.exe
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\bin\Debug\ONA-Clinics.pdb
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\bin\Debug\MaterialDesignColors.dll
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\ONA-Clinics.csprojResolveAssemblyReference.cache
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\Admin.baml
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\BasicData.baml
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\form1.baml
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\LogIn.baml
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\App.baml
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\Admin.g.cs
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\BasicData.g.cs
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\form1.g.cs
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\LogIn.g.cs
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\App.g.cs
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\ONA-Clinics_MarkupCompile.cache
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\ONA-Clinics.g.resources
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\ONA_Clinics.Properties.Resources.resources
+C:\Users\Ahmed Saad\Desktop\ONA\Clinics\ONA-Clinics V 1.2 AGS\ONA-Clinics\obj\Debug\ONA-Clinics.csproj.GenerateResource.Cache
+D:\ONA-Clinics AGS\ONA-Clinics\bin\Debug\ONA-Clinics.exe.config
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\ONA-Clinics.exe
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\ONA-Clinics.pdb
+D:\ONA-Clinics AGS\ONA-Clinics\bin\Debug\ONA-Clinics.exe
+D:\ONA-Clinics AGS\ONA-Clinics\bin\Debug\ONA-Clinics.pdb
+D:\ONA-Clinics AGS\ONA-Clinics\bin\Debug\MaterialDesignColors.dll
+D:\ONA-Clinics AGS\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\ONA-Clinics AGS\ONA-Clinics\bin\Debug\MaterialDesignColors.pdb
+D:\ONA-Clinics AGS\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\ONA-Clinics AGS\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\Admin.baml
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\BasicData.baml
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\form1.baml
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\LogIn.baml
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\App.baml
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\Admin.g.cs
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\BasicData.g.cs
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\form1.g.cs
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\LogIn.g.cs
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\App.g.cs
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\ONA-Clinics_MarkupCompile.cache
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\ONA-Clinics.g.resources
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\ONA_Clinics.Properties.Resources.resources
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\ONA-Clinics.csproj.GenerateResource.Cache
+D:\ONA-Clinics AGS\ONA-Clinics\bin\Debug\Oracle.DataAccess.dll
+D:\ONA-Clinics AGS\ONA-Clinics\obj\Debug\ONA-Clinics.csprojResolveAssemblyReference.cache
+D:\New Modul\ONA-Clinics\bin\Debug\ONA-Clinics.exe.config
+D:\New Modul\ONA-Clinics\obj\Debug\ONA-Clinics.exe
+D:\New Modul\ONA-Clinics\obj\Debug\ONA-Clinics.pdb
+D:\New Modul\ONA-Clinics\bin\Debug\ONA-Clinics.exe
+D:\New Modul\ONA-Clinics\bin\Debug\ONA-Clinics.pdb
+D:\New Modul\ONA-Clinics\bin\Debug\MaterialDesignColors.dll
+D:\New Modul\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\New Modul\ONA-Clinics\bin\Debug\Oracle.DataAccess.dll
+D:\New Modul\ONA-Clinics\bin\Debug\MaterialDesignColors.pdb
+D:\New Modul\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\New Modul\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\New Modul\ONA-Clinics\obj\Debug\ONA-Clinics.csprojResolveAssemblyReference.cache
+D:\New Modul\ONA-Clinics\obj\Debug\Admin.baml
+D:\New Modul\ONA-Clinics\obj\Debug\BasicData.baml
+D:\New Modul\ONA-Clinics\obj\Debug\form1.baml
+D:\New Modul\ONA-Clinics\obj\Debug\LogIn.baml
+D:\New Modul\ONA-Clinics\obj\Debug\App.baml
+D:\New Modul\ONA-Clinics\obj\Debug\Admin.g.cs
+D:\New Modul\ONA-Clinics\obj\Debug\BasicData.g.cs
+D:\New Modul\ONA-Clinics\obj\Debug\form1.g.cs
+D:\New Modul\ONA-Clinics\obj\Debug\LogIn.g.cs
+D:\New Modul\ONA-Clinics\obj\Debug\App.g.cs
+D:\New Modul\ONA-Clinics\obj\Debug\ONA-Clinics_MarkupCompile.cache
+D:\New Modul\ONA-Clinics\obj\Debug\ONA-Clinics.g.resources
+D:\New Modul\ONA-Clinics\obj\Debug\ONA_Clinics.Properties.Resources.resources
+D:\New Modul\ONA-Clinics\obj\Debug\ONA-Clinics.csproj.GenerateResource.Cache
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\bin\Debug\ONA-Clinics.exe.config
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ONA-Clinics.exe
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ONA-Clinics.pdb
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\bin\Debug\ONA-Clinics.exe
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\bin\Debug\ONA-Clinics.pdb
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\bin\Debug\MaterialDesignColors.dll
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ONA-Clinics.csprojResolveAssemblyReference.cache
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\Admin.baml
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ClinicsFrm.baml
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\form1.baml
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\LogIn.baml
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\App.baml
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\Admin.g.cs
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ClinicsFrm.g.cs
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\form1.g.cs
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\LogIn.g.cs
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\App.g.cs
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ONA-Clinics_MarkupCompile.cache
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ONA-Clinics.g.resources
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ONA_Clinics.Properties.Resources.resources
+C:\Users\Ahmed Saad\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ONA-Clinics.csproj.GenerateResource.Cache
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\bin\Debug\ONA-Clinics.exe.config
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ONA-Clinics.exe
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ONA-Clinics.pdb
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\bin\Debug\ONA-Clinics.exe
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\bin\Debug\ONA-Clinics.pdb
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\bin\Debug\MaterialDesignColors.dll
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ONA-Clinics.csprojResolveAssemblyReference.cache
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\Admin.baml
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ClinicsFrm.baml
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\form1.baml
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\LogIn.baml
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\App.baml
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\Admin.g.cs
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ClinicsFrm.g.cs
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\form1.g.cs
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\LogIn.g.cs
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\App.g.cs
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ONA-Clinics_MarkupCompile.cache
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ONA-Clinics.g.resources
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ONA_Clinics.Properties.Resources.resources
+C:\Users\Dev\Desktop\New Modul TM\ONA-Clinics\obj\Debug\ONA-Clinics.csproj.GenerateResource.Cache
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\bin\Debug\ONA-Clinics.exe.config
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\ONA-Clinics.exe
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\ONA-Clinics.pdb
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\bin\Debug\ONA-Clinics.exe
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\bin\Debug\ONA-Clinics.pdb
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\bin\Debug\MaterialDesignColors.dll
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\ONA-Clinics.csprojResolveAssemblyReference.cache
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\Admin.baml
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\ClinicsFrm.baml
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\form1.baml
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\LogIn.baml
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\App.baml
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\Admin.g.cs
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\ClinicsFrm.g.cs
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\form1.g.cs
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\LogIn.g.cs
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\App.g.cs
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\ONA-Clinics_MarkupCompile.cache
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\ONA-Clinics.g.resources
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\ONA_Clinics.Properties.Resources.resources
+C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\ONA-Clinics.csproj.GenerateResource.Cache

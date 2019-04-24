@@ -136,7 +136,7 @@ namespace ONA_Clinics
             this.WindowState = WindowState.Minimized;
         }
 
-     
+
         private void txtCard_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -219,39 +219,6 @@ namespace ONA_Clinics
             }
         }
 
-        //private void txtCard_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    if (e.Key == Key.Enter)
-        //    {
-        //        DataTable dtinformation = db.RunReader("select  to_char(BIRTH_DATE,'DD-MM-YYYY'),C_COMP_ID,CLASS_CODE,NVL(to_char(SPECIFIC_DATE,'DD-MM-YYYY'),to_char(INS_START_DATE,'DD-MM-YYYY')),to_char(INS_END_DATE,'DD-MM-YYYY'),TERMINATE_FLAG ,EMP_ANAME_ST ,EMP_ANAME_SC,EMP_ANAME_TH ,EMP_ENAME_ST ,EMP_ENAME_SC,EMP_ENAME_TH, to_char(INS_START_DATE,'DD-MM-YYYY'), to_char(TERMINATE_DATE,'DD-MM-YYYY'), contract_no from COMP_EMPLOYEESS where CARD_ID='" + txtCard.Text + "' order by ins_start_date DESC");
-
-        //        if (dtinformation.Rows.Count > 0 && Convert.ToDateTime(dtinformation.Rows[0][4]).Date < DateTime.Now.Date)
-        //            MessageBox.Show("خارج التغطية التامينية");
-        //        else if (dtinformation.Rows.Count > 0 && dtinformation.Rows[0][5].ToString() == "Y" && Convert.ToDateTime(dtinformation.Rows[0][13]).Date < DateTime.Now.Date)
-        //        {
-        //            MessageBox.Show("أنتهى التعاقد مع هذا الموظف بتاريخ " + dtinformation.Rows[0][13].ToString());
-        //        }
-        //        else if (dtinformation.Rows.Count > 0)
-        //        {
-        //            string comp = "";
-        //            //comp = txtCard.Text.Substring(0, txtCard.Text.IndexOf('-'));
-
-
-        //            txtBirthDate.Text = dtinformation.Rows[0][0].ToString();
-        //            comp_code= comp = dtinformation.Rows[0][1].ToString();
-        //            class_code = dtinformation.Rows[0][2].ToString();
-        //            contract_num = dtinformation.Rows[0][14].ToString();
-        //            txtCompName.Text = db.RunReader(@"select C_ENAME from V_COMPANIES  WHERE  C_COMP_ID  = '" + comp + "'").Rows[0][0].ToString();
-        //            txtAge.Text = (DateTime.Now.Year - Convert.ToDateTime(dtinformation.Rows[0][0]).Year).ToString();
-        //            txtContractStartDate.Text = dtinformation.Rows[0][3].ToString();
-        //            txtContractEndtDate.Text = dtinformation.Rows[0][4].ToString();
-        //            txtAName.Text = dtinformation.Rows[0][6].ToString() + " " + dtinformation.Rows[0][7].ToString() + " " + dtinformation.Rows[0][8].ToString();
-        //            txtEName.Text = dtinformation.Rows[0][9].ToString() + " " + dtinformation.Rows[0][10].ToString() + " " + dtinformation.Rows[0][11].ToString();
-        //        }
-        //        else
-        //            MessageBox.Show("هذا الكارت غير موجود من فضلك تأكد من رقم الكارت");
-        //    }
-        //}
         private void SwitchBTN_Click(object sender, RoutedEventArgs e)
         {
           
@@ -277,7 +244,7 @@ namespace ONA_Clinics
 
 
         /* ======================================== toooth here =========================================== */
-        string detailgroup, comp_code, class_code, contract_num;
+        string detailgroup;
         List<GroupNo> grouplist = new List<GroupNo>();
         System.Data.DataTable dtooth;
         System.Data.DataTable groupno_tabl;
@@ -359,34 +326,34 @@ namespace ONA_Clinics
                 try
                 {
                     aaa = db.RunReader(@"SELECT COPAY_PERC, MAX_AMOUNT, COPAY_AMT, SERV_CODE FROM COMP_CONTRACT_CLASS_PROVIDER 
-                                         WHERE COMP_ID= '" + comp_code + "' AND CONTRACT_NO = '" + contract_num + "' AND CLASS_CODE = '" + class_code + "' AND PR_CODE = '" + User.Provider_Code + "' AND SERV_CODE = '" + servprov + "'");
+                                         WHERE COMP_ID= '" + Patient.Comp_id + "' AND CONTRACT_NO = '" + Patient.Contract_NO + "' AND CLASS_CODE = '" + Patient.Class_Code + "' AND PR_CODE = '" + User.Provider_Code + "' AND SERV_CODE = '" + servprov + "'");
 
                     if (aaa.Rows.Count == 0)
                         aaa = db.RunReader(@"SELECT COPAY_PERC, MAX_AMOUNT, COPAY_AMT, SERV_CODE FROM COMP_CONTRACT_CLASS_PROVIDER 
-                                         WHERE COMP_ID= '" + comp_code + "' AND CONTRACT_NO = '" + contract_num + "' AND CLASS_CODE = '" + class_code + "' AND PR_CODE = '" + User.Provider_Code + "' AND SERV_CODE = '" + cbxServies.Text + "'");
+                                         WHERE COMP_ID= '" + Patient.Comp_id + "' AND CONTRACT_NO = '" + Patient.Contract_NO + "' AND CLASS_CODE = '" + Patient.Class_Code + "' AND PR_CODE = '" + User.Provider_Code + "' AND SERV_CODE = '" + cbxServies.Text + "'");
 
 
                     if (aaa.Rows.Count == 0)
                     {
 
-                        aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, SER_SERV from DMS_TEST.COMP_CUSTOMIZED_D_D_EMP where C_COMP_ID='" + comp_code + "' and CONTRACT_NO='" + contract_num + "' and CLASS_CODE='" + class_code + "' and SER_SERV='" + cbxServies.Text + "' AND CARD_ID = '" + txtCard.Text + "'");
+                        aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, SER_SERV from DMS_TEST.COMP_CUSTOMIZED_D_D_EMP where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and SER_SERV='" + cbxServies.Text + "' AND CARD_ID = '" + txtCard.Text + "'");
 
                         //if (aaa.Rows.Count == 0)
                         //    aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, SER_SERV FROM APP.COMP_CUSTOMIZED_D_D_COST_CNTR where C_COMP_ID='" + comp_code + "' and CONTRACT_NO='" + contract_num + "' and CLASS_CODE='" + class_code + "' and SER_SERV='" + cbxServies.Text + "' AND COST_CODE = '" + CostCenterCodeApproval.Text + "'");
                         //if (aaa.Rows.Count == 0)
-                            aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, SER_SERV from DMS_TEST.COMP_CUSTOMIZED_D_D where C_COMP_ID='" + comp_code + "' and CONTRACT_NO='" + contract_num + "' and CLASS_CODE='" + class_code + "' and SER_SERV='" + cbxServies.Text + "'");
+                            aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, SER_SERV from DMS_TEST.COMP_CUSTOMIZED_D_D where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and SER_SERV='" + cbxServies.Text + "'");
 
 
 
                         if ((aaa.Rows.Count == 0) || (aaa.Rows.Count != 0 && aaa.Rows[0][0].ToString() == string.Empty))
-                            aaa = db.RunReader("select CEILING_PERT,CEILING_AMT, CARR_AMT from V_P_COMP_CUSTOMIZED_D where C_COMP_ID='" + comp_code + "' and CONTRACT_NO='" + contract_num + "' and CLASS_CODE='" + class_code + "' and D_SERV_CODE='" + cbxServies.Text + "'");
+                            aaa = db.RunReader("select CEILING_PERT,CEILING_AMT, CARR_AMT from V_P_COMP_CUSTOMIZED_D where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and D_SERV_CODE='" + cbxServies.Text + "'");
 
                     }
 
 
                     dtooth = db.RunReader(@"select APPROVAL_SUB_SERV.S_SERV_CODE, APPROVAL_SUB_SERV.S_SERV_NAME, APPROVAL_SUB_SERV.details, MEDICAL_APPROVALS.CREATED_DATE,MEDICAL_APPROVALS.CODE from APPROVAL_SUB_SERV, MEDICAL_APPROVALS 
                                                             where APPROVAL_SUB_SERV.code = MEDICAL_APPROVALS.code
-                                                            AND MEDICAL_APPROVALS.card_no = '" + txtCard.Text + "' AND MEDICAL_APPROVALS.COMP_CONTRACT_NO ='" + contract_num + "' AND APPROVAL_SUB_SERV.S_SERV_CODE ='" + cbxServies.Text + "' AND MEDICAL_APPROVALS.active = 'Y'");
+                                                            AND MEDICAL_APPROVALS.card_no = '" + txtCard.Text + "' AND MEDICAL_APPROVALS.COMP_CONTRACT_NO ='" + Patient.Contract_NO + "' AND APPROVAL_SUB_SERV.S_SERV_CODE ='" + cbxServies.Text + "' AND MEDICAL_APPROVALS.active = 'Y'");
 
                 }
                 catch { }
@@ -416,7 +383,7 @@ namespace ONA_Clinics
                 else
                 {
                     System.Data.DataTable dtrecolaprov = new System.Data.DataTable();
-                    dtrecolaprov = db.RunReader(@"SELECT RECOLLECTION FROM PAYMENT_DET_D WHERE C_COMP_ID = '" + comp_code + "' AND CONTRACT_NO = '" + contract_num + "' ");
+                    dtrecolaprov = db.RunReader(@"SELECT RECOLLECTION FROM PAYMENT_DET_D WHERE C_COMP_ID = '" + Patient.Comp_id + "' AND CONTRACT_NO = '" + Patient.Contract_NO + "' ");
                     if (dtrecolaprov.Rows.Count > 0 && dtrecolaprov.Rows[0][0].ToString() == "N")
                     {
                         MessageBox.Show("هذه الخدمة غير مغطاه لهذا المريض");
@@ -518,7 +485,7 @@ namespace ONA_Clinics
         int TestToothExistNow(string toth)
         {
             int tm = 0;
-            GroupNo temp;
+          //  GroupNo temp;
 
 
             foreach (GroupNo item in grouplist)
