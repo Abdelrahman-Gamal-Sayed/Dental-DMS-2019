@@ -1,4 +1,4 @@
-﻿<Window x:Class="ONA_Clinics.MainWindow"
+﻿<Window xmlns:ONA_Clinics="clr-namespace:ONA_Clinics"  x:Class="ONA_Clinics.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       
@@ -12,13 +12,18 @@
      
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto" WindowStartupLocation="CenterScreen"
         Background="White" SnapsToDevicePixels="True" WindowStyle="None"
-   
+     KeyDown="Window_KeyDown"
         
         
         >
-    <Border Background="#FF3C1359" CornerRadius="5">
+    <Border  CornerRadius="5">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF292061" Offset="0.857"/>
+            </LinearGradientBrush>
+        </Border.Background>
         <Grid >
-
             <StackPanel Margin="50" >
                 <Border Margin="88,0,88,0" Background="White"  CornerRadius="60">
                     <Image Height="80" Source="media/logo .png" Margin="0,0,0,5" />

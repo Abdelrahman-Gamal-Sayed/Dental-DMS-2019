@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\obj\Debug\
+D:\Abdelrahman\Work & CV final\Projects\Desktop\2019 Dental DMS\ONA-Clinics\obj\Debug\
 ONA_Clinics
 none
 false
 DEBUG;TRACE
-C:\Users\Dev\Desktop\ONA DMS\ONA-Clinics\App.xaml
-4-136459528
+D:\Abdelrahman\Work & CV final\Projects\Desktop\2019 Dental DMS\ONA-Clinics\App.xaml
+8-236560214
 
-13399460390
-161477474173
-Admin.xaml;ClinicsFrm.xaml;form1.xaml;LogIn.xaml;
+20-146862930
+22-1549791066
+AdminFrm.xaml;ClinicsFrm.xaml;Doctor.xaml;form1.xaml;Forms_Switch.xaml;frmPhysicalTherapy.xaml;LogIn.xaml;Window1.xaml;
 
-False
+True
 

@@ -29,7 +29,7 @@ namespace ONA_Clinics
         public string subServicePrice;
         public string DmsDiscForSubServ;
         public string paitiontCash;
-
+     //   public bool flage_Disc;  //lw feeh 5sm htb2a Y lw mfeesh htb2a N
 
     }
     /// <summary>
@@ -43,7 +43,7 @@ namespace ONA_Clinics
         public ClinicsFrm()
         {
             InitializeComponent();
-            User.Provider_Code = "1082";
+            
 
             CultureInfo ci = CultureInfo.CreateSpecificCulture(CultureInfo.CurrentCulture.Name);
             ci.DateTimeFormat.ShortDatePattern = "dd-MM-yyyy";
@@ -194,25 +194,32 @@ namespace ONA_Clinics
 
                         Patient.Consumption_Total = (Convert.ToDouble(Patient.Consumption_IRS) + Convert.ToDouble(Patient.Consumption_Online)).ToString();
 
+
+                        DataTable dtemp = db.RunReader("SELECT  NVL(SUM(TOTAL_CREDIT),0) FROM D_DETECTION WHERE CARD_ID='" + Patient.Card_NO + "' and CONTRACT_NO ='"+Patient.Contract_NO+"'");
+
+                        Patient.Consumption_Total = ( Convert.ToDouble(Patient.Consumption_Total) + Convert.ToDouble(dtemp.Rows[0][0].ToString()) ).ToString();
+
+
+
                         Patient.Available = (Convert.ToDouble(Patient.Max_Amount) - Convert.ToDouble(Patient.Consumption_Total)).ToString();
 
                     }
                     catch { }
 
-                    DataTable aaa = new DataTable();
-                    aaa = db.RunReader(@"SELECT COPAY_PERC, MAX_AMOUNT, COPAY_AMT, SERV_CODE FROM COMP_CONTRACT_CLASS_PROVIDER 
-                                         WHERE COMP_ID= '" + Patient.Comp_id + "' AND CONTRACT_NO = '" + Patient.Contract_NO + "' AND CLASS_CODE = '" + Patient.Class_Code + "' AND PR_CODE = '" + User.Provider_Code + "' AND SERV_CODE = '11204'");
-                    if (aaa.Rows.Count == 0)
-                        aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, SER_SERV from DMS_TEST.COMP_CUSTOMIZED_D_D_EMP where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and SER_SERV='11204' AND CARD_ID = '" + txtCard.Text + "'");
-                    else if (aaa.Rows.Count == 0)
-                        aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, SER_SERV from DMS_TEST.COMP_CUSTOMIZED_D_D where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and SER_SERV='11204'");
-                    //   else if (aaa.Rows.Count == 0)
-                    // aaa = db.RunReader("select CEILING_PERT,CEILING_AMT, CARR_AMT from V_P_COMP_CUSTOMIZED_D where C_COMP_ID='" + Patient.Comp_id  + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and SER_SERV='11204'");
+                    //DataTable aaa = new DataTable();
+                    //aaa = db.RunReader(@"SELECT COPAY_PERC, MAX_AMOUNT, COPAY_AMT, SERV_CODE FROM COMP_CONTRACT_CLASS_PROVIDER 
+                    //                     WHERE COMP_ID= '" + Patient.Comp_id + "' AND CONTRACT_NO = '" + Patient.Contract_NO + "' AND CLASS_CODE = '" + Patient.Class_Code + "' AND PR_CODE = '" + User.Provider_Code + "' AND SERV_CODE = '114'");
+                    //if (aaa.Rows.Count == 0)
+                    //    aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, SER_SERV from DMS_TEST.COMP_CUSTOMIZED_D_D_EMP where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and SER_SERV='114' AND CARD_ID = '" + txtCard.Text + "'");
+                    //else if (aaa.Rows.Count == 0)
+                    //    aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, SER_SERV from DMS_TEST.COMP_CUSTOMIZED_D_D where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and SER_SERV='114'");
+                    ////   else if (aaa.Rows.Count == 0)
+                    //// aaa = db.RunReader("select CEILING_PERT,CEILING_AMT, CARR_AMT from V_P_COMP_CUSTOMIZED_D where C_COMP_ID='" + Patient.Comp_id  + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and SER_SERV='11204'");
 
-                    else if (aaa.Rows.Count == 0)
-                    {
-                        MessageBox.Show("هذا الكارت غير متاح له هذه الخدمة");
-                    }
+                    //else if (aaa.Rows.Count == 0)
+                    //{
+                    //    MessageBox.Show("هذا الكارت غير متاح له هذه الخدمة");
+                    //}
                 }
                 else
                     MessageBox.Show("هذا الكارت غير موجود من فضلك تأكد من رقم الكارت");
@@ -235,16 +242,18 @@ namespace ONA_Clinics
 
         private void refBTN_Click(object sender, RoutedEventArgs e)
         {
-            //  MessageBox.Show("aaaaaaaaa");
-            Console.WriteLine("SAMPLE 2: Closing dialog with parameter:");
 
-            //MaterialMessageBox.Show("Your cool message here", "The awesome message title");
+
+            maingrid.CleanAll();
+            dgTotal.ItemsSource = null;
+            grouplist.Clear();
+
         }
 
 
 
         /* ======================================== toooth here =========================================== */
-        string detailgroup;
+        string detailgroup, DmsDiscForSubServ, DmsDiscForSubServMax;
         List<GroupNo> grouplist = new List<GroupNo>();
         System.Data.DataTable dtooth;
         System.Data.DataTable groupno_tabl;
@@ -261,15 +270,14 @@ namespace ONA_Clinics
 
 
 
-            //foreach (GroupNo item in grouplist)
-            //{
-            //    if (item.toothNumber == toothnum && item.serviceCode == "11423")
-            //    {
-            //        MessageBox.Show("لايمكن طلب خدمة لسن سيتم خلعة");
-            //        c.IsChecked = false;
-            //        return;
-            //    }
-            //}
+            foreach(GroupNo item in grouplist) {
+                if(item.toothNumber == toothnum && item.serviceCode == "11423") {
+                    MessageBox.Show("لايمكن طلب خدمة لسن سيتم خلعة" );
+                    tooth.Visibility = Visibility.Hidden;
+                    c.IsChecked = false;
+                    return;
+                }
+            }
 
             int tstoth = TestToothExist(toothnum);
             int tsttothnow = TestToothExistNow(toothnum);
@@ -336,24 +344,23 @@ namespace ONA_Clinics
                     if (aaa.Rows.Count == 0)
                     {
 
-                        aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, SER_SERV from DMS_TEST.COMP_CUSTOMIZED_D_D_EMP where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and SER_SERV='" + cbxServies.Text + "' AND CARD_ID = '" + txtCard.Text + "'");
+                        aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, refund_flag, SER_SERV from DMS_TEST.COMP_CUSTOMIZED_D_D_EMP where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and SER_SERV='" + cbxServies.Text + "' AND CARD_ID = '" + txtCard.Text + "'");
 
-                        //if (aaa.Rows.Count == 0)
-                        //    aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, SER_SERV FROM APP.COMP_CUSTOMIZED_D_D_COST_CNTR where C_COMP_ID='" + comp_code + "' and CONTRACT_NO='" + contract_num + "' and CLASS_CODE='" + class_code + "' and SER_SERV='" + cbxServies.Text + "' AND COST_CODE = '" + CostCenterCodeApproval.Text + "'");
-                        //if (aaa.Rows.Count == 0)
-                            aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, SER_SERV from DMS_TEST.COMP_CUSTOMIZED_D_D where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and SER_SERV='" + cbxServies.Text + "'");
-
+             
+                        if (aaa.Rows.Count == 0)
+                            aaa = db.RunReader("SELECT CEILING_PERT,CEILING_AMT, CARR_AMT, refund_flag, SER_SERV from DMS_TEST.COMP_CUSTOMIZED_D_D where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and SER_SERV='" + cbxServies.Text + "'");
 
 
+                        // da max amount LL servies Kolhaa
                         if ((aaa.Rows.Count == 0) || (aaa.Rows.Count != 0 && aaa.Rows[0][0].ToString() == string.Empty))
-                            aaa = db.RunReader("select CEILING_PERT,CEILING_AMT, CARR_AMT from V_P_COMP_CUSTOMIZED_D where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and D_SERV_CODE='" + cbxServies.Text + "'");
+                            aaa = db.RunReader("select CEILING_PERT,CEILING_AMT, CARR_AMT,refund_flag from V_P_COMP_CUSTOMIZED_D where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and D_SERV_CODE='" + cbxServies.Text + "'");
 
                     }
 
 
                     dtooth = db.RunReader(@"select APPROVAL_SUB_SERV.S_SERV_CODE, APPROVAL_SUB_SERV.S_SERV_NAME, APPROVAL_SUB_SERV.details, MEDICAL_APPROVALS.CREATED_DATE,MEDICAL_APPROVALS.CODE from APPROVAL_SUB_SERV, MEDICAL_APPROVALS 
                                                             where APPROVAL_SUB_SERV.code = MEDICAL_APPROVALS.code
-                                                            AND MEDICAL_APPROVALS.card_no = '" + txtCard.Text + "' AND MEDICAL_APPROVALS.COMP_CONTRACT_NO ='" + Patient.Contract_NO + "' AND APPROVAL_SUB_SERV.S_SERV_CODE ='" + cbxServies.Text + "' AND MEDICAL_APPROVALS.active = 'Y'");
+                                                            AND MEDICAL_APPROVALS.card_no = '" + Patient.Card_NO + "' AND MEDICAL_APPROVALS.COMP_CONTRACT_NO ='" + Patient.Contract_NO + "' AND APPROVAL_SUB_SERV.S_SERV_CODE ='" + cbxServies.Text + "' AND MEDICAL_APPROVALS.active = 'Y'");
 
                 }
                 catch { }
@@ -362,6 +369,28 @@ namespace ONA_Clinics
 
                 if (aaa.Rows.Count != 0 && aaa.Rows[0][0].ToString() != string.Empty)
                 {
+
+                    DmsDiscForSubServ = "";
+                    if (aaa.Rows[0][3].ToString()== "Y")
+                    {
+                        MessageBox.Show("هذه الخدمة سيتم سدادها نقدا و يتم اعادة تحصيل من الشركة طبقا لبنود العقد");
+                        txtflage.Text = "N";
+                        DmsDiscForSubServ = "0";
+                        // return;
+                    }
+                    else
+                        DmsDiscForSubServ = aaa.Rows[0][0].ToString();
+                    DmsDiscForSubServMax = "";
+                    DmsDiscForSubServMax = aaa.Rows[0][1].ToString();
+
+
+                    //if(DmsDiscForSubServMax.Trim()=="") {
+
+                    //    DataTable dt = db.RunReader("select CEILING_PERT,CEILING_AMT, CARR_AMT,refund_flag from V_P_COMP_CUSTOMIZED_D where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and D_SERV_CODE='114'");
+                    //    if(dt.Rows.Count>0)
+                    //    DmsDiscForSubServMax = dt.Rows[0][1].ToString();
+
+                    //}
                     //  txtindcode1_Copy1.Text = aaa.Rows[0][0].ToString() + " %";// نسبة التحمل
                     //  txtindcode1_Copy2.Text = aaa.Rows[0][1].ToString(); // الحد الاقصى للخدمة
 
@@ -372,10 +401,13 @@ namespace ONA_Clinics
                     //    copayamtaprov = " يتحمل المريض مبلغ وقدره" + aaa.Rows[0][2].ToString() + " جنيه";
                     //else
                     //    copayamtaprov = "";
-
                    
-
+                   
+                 
+                   
                   
+
+
                     tooth.Visibility = Visibility.Visible;
                     NameTeethSearch_Copy.ItemsSource= NameTeethSearch.ItemsSource = db.RunReader(@"select SERV_CODE, SERV_ANAME, SERV_ENAME, SERV_CODE_H FROM v_services where SERV_CODE like '" + cbxServies.Text + "%' order by SERV_ENAME").DefaultView;
 
@@ -386,12 +418,12 @@ namespace ONA_Clinics
                     dtrecolaprov = db.RunReader(@"SELECT RECOLLECTION FROM PAYMENT_DET_D WHERE C_COMP_ID = '" + Patient.Comp_id + "' AND CONTRACT_NO = '" + Patient.Contract_NO + "' ");
                     if (dtrecolaprov.Rows.Count > 0 && dtrecolaprov.Rows[0][0].ToString() == "N")
                     {
-                        MessageBox.Show("هذه الخدمة غير مغطاه لهذا المريض");
+                        MessageBox.Show(" هذه الخدمة غير مغطاه لهذا المريض طبقا لبنود العقد فى حالة وجود اى استفسار يرجى التواصل مع المسئول التابع لسيادتكم" );
 
                     }
                     else
                     {
-                        MessageBox.Show("هذه الخدمة غير مغطاه لهذا المريض");
+                        MessageBox.Show(" هذه الخدمة غير مغطاه لهذا المريض طبقا لبنود العقد فى حالة وجود اى استفسار يرجى التواصل مع المسئول التابع لسيادتكم");
                     }
 
                 }
@@ -445,6 +477,9 @@ namespace ONA_Clinics
                 return;
             }
 
+
+        
+
             if (NameTeethSearch.Text != string.Empty && NameTeethSearch.SelectedIndex >= 0)
             {
                 foreach (DataRow item in groupno_tabl.Rows)
@@ -462,8 +497,51 @@ namespace ONA_Clinics
                         temp.subServiceName = NameTeethSearch.Text;
                         temp.subServiceCode = NameTeethSearch_Copy.Text;
                         temp.subServicePrice = txtSalary.Text;
-                        temp.DmsDiscForSubServ = "0 %";
-                        temp.paitiontCash= txtSalary.Text;
+                   
+                        temp.DmsDiscForSubServ = DmsDiscForSubServ + " %";
+
+
+
+                        foreach(GroupNo itemtest in grouplist) {
+                            if(itemtest.toothNumber == detailgroup && cbxServies.Text.Trim() == "11423") {
+                                MessageBox.Show("لايمكن خلع سن سيتم عمل عملية عليه");
+                                // tooth.Visibility = Visibility.Hidden;
+                                //   c.IsChecked = false;
+
+
+
+                                NameTeethSearch_Copy.Text = "";
+
+                                txtSalary.Text = "";
+                                detailgroup = "";
+                                NameTeethSearch.Text = "";
+
+                                TeethType.Visibility = Visibility.Hidden;
+                                tooth.IsEnabled = true;
+
+                                return;
+                            }
+                        }
+
+
+
+
+
+                        double DMSDiscPrice = (Convert.ToDouble(txtSalary.Text.Trim()) * Convert.ToDouble(DmsDiscForSubServ.Trim()) / 100);
+
+
+                         if (DmsDiscForSubServMax.Trim() != "" && DMSDiscPrice > Convert.ToDouble(DmsDiscForSubServMax.Trim()))
+                        {
+
+                            DMSDiscPrice = Convert.ToDouble(DmsDiscForSubServMax.Trim());
+                           // MessageBox.Show(DmsDiscForSubServMax);
+
+                        }
+
+
+                       
+
+                        temp.paitiontCash = (Convert.ToDouble(txtSalary.Text) - DMSDiscPrice).ToString();
                         grouplist.Add(temp);
 
 
@@ -527,21 +605,65 @@ namespace ONA_Clinics
             dt.Columns.Add("نسبة الخصم", typeof(string));
             dt.Columns.Add("بعد الخصم", typeof(string));
 
-            double total = 0;
+            double total = 0, paitiontCash = 0;
             //   txtindcode1_Service.Text = "";
             foreach (GroupNo item in grouplist)
             {
                 //  txtindcode1_Service.Text = txtindcode1_Service.Text + item.name + " " + item.discr + item.detail + item.typopera + " " + "\n";
 
                 total += Convert.ToDouble(item.subServicePrice);
+                paitiontCash += Convert.ToDouble(item.paitiontCash);
                 //    dt.Columns.Add("name", typeof(string));
                 dt.Rows.Add(item.serial, item.serviceCode, item.serviceName, item.toothNumber, item.subServiceCode, item.subServiceName, item.subServicePrice, item.DmsDiscForSubServ, item.paitiontCash);
             //    dgTotal.ItemsSource = groupno_tabl.DefaultView;
 
             }
+
+
+
             txtAName1.Text = total.ToString();
-            txtAName2.Text = "0";
-            txtAName3.Text = total.ToString();
+          
+            txtAName3.Text = paitiontCash.ToString();
+
+            txtAName2.Text = (total- paitiontCash).ToString();
+            string avilable = "9999999", maxserviec  = "9999999";
+            DataTable dst = db.RunReader("select CEILING_PERT,CEILING_AMT, CARR_AMT,refund_flag from V_P_COMP_CUSTOMIZED_D where C_COMP_ID='" + Patient.Comp_id + "' and CONTRACT_NO='" + Patient.Contract_NO + "' and CLASS_CODE='" + Patient.Class_Code + "' and D_SERV_CODE='114'");
+
+
+
+            DataTable dtemp = db.RunReader("SELECT  NVL(SUM(TOTAL_CREDIT),0) FROM D_DETECTION WHERE SERV_CODE ='114' and CARD_ID='" + Patient.Card_NO + "'");
+
+            DataTable dtemp2 = db.RunReader("select nvl( sum(CONSUMPTION),0) from CONS_SUMMARY where GROUP_NO='8' and CONTRACT_NO='" + Patient.Contract_NO+"' and COMP_ID='"+Patient.Comp_id+"' and CARD_ID='"+Patient.Card_NO+"'");
+
+          
+
+
+            if(dt.Rows.Count > 0) {
+                maxserviec = dst.Rows[0][1].ToString();
+                avilable = (Convert.ToDouble(maxserviec) - (Convert.ToDouble(dtemp.Rows[0][0].ToString()) +  Convert.ToDouble(dtemp2.Rows[0][0].ToString()) ) ).ToString();
+
+            }
+
+
+            if(Convert.ToDouble(txtAName2.Text) > Convert.ToDouble(avilable)) {
+                txtAName2.Text = avilable;
+                txtAName3.Text = ( Convert.ToDouble(txtAName1.Text) - Convert.ToDouble(avilable) ).ToString();
+            }
+
+
+
+            if(Convert.ToDouble(Patient.Available) < Convert.ToDouble(txtAName2.Text)) //lw kemt el5dma akbr mn egmaly el esthlakaat
+  {
+                txtAName2.Text = Patient.Available;
+                txtAName3.Text = ( Convert.ToDouble(txtAName1.Text) - Convert.ToDouble(Patient.Available) ).ToString();
+
+
+
+            }
+
+
+
+
             dgTotal.ItemsSource = dt.DefaultView;
             //  cbxindtyp1_Copy3.IsEnabled = false;
             // requesthrsearch3_addservice.IsEnabled = false;
@@ -589,6 +711,43 @@ namespace ONA_Clinics
 
         }
 
+        private void refBTN_Copy_Click(object sender, RoutedEventArgs e) {
+
+
+            string detection_code = db.RunReader("select nvl(max(CODE), 0) + 1 from D_DETECTION").Rows[0][0].ToString();
+
+            db.RunNonQuery(@"INSERT INTO D_DETECTION (CODE, COMP_ID, CARD_ID, PROVIDER_TYPE, PROVIDER_CODE, PROVIDER_NAME, CONTRACT_NO, CLASS_CODE, TOTAL_AMOUNT, TOTAL_CREDIT, TOTAL_CASH, CREATED_BY, CREATED_DATE,SERV_CODE) 
+VALUES ('" + detection_code + "', '"+Patient.Comp_id+"', '"+Patient.Card_NO+"', '"+User.Provider_Type+"', '"+User.Provider_Code+"', '"+User.Provider_Arabic_Name+"', '"+Patient.Contract_NO+"', '"+Patient.Class_Code+"', '"+ txtAName1 .Text.Trim()+ "', '"+ txtAName2 .Text.Trim()+ "', '"+ txtAName3 .Text.Trim()+ "', '"+User.Name+ "', sysdate,'114')");
+
+
+            foreach(GroupNo item in grouplist) {
+
+                db.RunNonQuery(@"INSERT INTO D_DENTAL_DETECTION_DETAILS (DETAILS_CODE, DETECTION_CODE, CARD_NO, SERVICE_CODE, SERVICE_NAME, SUB_SERVICE_CODE, SUB_SERVICE_NAME, TOOTH_NUMBER, SUB_SERVICE_PRICE, CREATED_BY, CREATED_DATE) 
+VALUES (( select nvl(max(DETAILS_CODE), 0) + 1 from D_DENTAL_DETECTION_DETAILS  ), '" + detection_code + "', '" + Patient.Card_NO + "', '" + item.serviceCode + "', '" + item.serviceName + "', '" + item.subServiceCode + "', '" + item.subServiceName + "', '" + item.toothNumber + "', '" + item.subServicePrice + "', '"+User.Name+ "', sysdate)");
+            }
+            //            INSERT INTO D_DENTAL_DETECTION_DETAILS(DETAILS_CODE, DETECTION_CODE, CARD_NO, SERVICE_CODE, TOOTH_NUMBER, SERVICE_PRICE, CREATED_BY, created_date)
+            //VALUES(( select nvl(max(DETAILS_CODE), 0) + 1 from D_DENTAL_DETECTION_DETAILS  ), '1', '1', '1', '1', '1', '1',sysdate)
+
+
+            MessageBox.Show("تم الحفظ بنجاح");
+            maingrid.CleanAll();
+            dgTotal.ItemsSource = null;
+            grouplist.Clear();
+
+
+
+
+
+
+
+
+
+
+        }
+
+        private void Border_KeyDown(object sender, KeyEventArgs e) {
+
+        }
 
         private void Cancel_Teeth_Click(object sender, RoutedEventArgs e)
         {

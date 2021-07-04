@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace ONA_Clinics
 {
     /// <summary>
-    /// Interaction logic for Admin.xaml
+    /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Admin : Window
+    public partial class Window1 : Window
     {
-        public Admin()
+        public Window1()
         {
             InitializeComponent();
         }

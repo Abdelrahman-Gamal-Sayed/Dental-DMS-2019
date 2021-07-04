@@ -1,4 +1,4 @@
-﻿<Window x:Class="ONA_Clinics.ClinicsFrm"
+﻿<Window xmlns:ONA_Clinics="clr-namespace:ONA_Clinics"  x:Class="ONA_Clinics.ClinicsFrm"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
           xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
@@ -10,7 +10,7 @@
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto" WindowStyle="None" ResizeMode="NoResize">
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto" WindowStyle="None" ResizeMode="NoResize" WindowState="Maximized">
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -61,30 +61,7 @@
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Left">
                 <materialDesign:PopupBox  Margin="6" Foreground="White" PlacementMode="BottomAndAlignLeftEdges"  StaysOpen="False">
 
-                    <StackPanel >
-
-                        <Button Content="Abdo"/>
-                        <Button Content="Abdo"/>
-
-                        <Separator/>
-                        <Button Name="SwitchBTN" Click="SwitchBTN_Click"   >
-                            <StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="AccountSwitch" Width="25"  Margin="0,0,5,0" Height="25" Foreground="{DynamicResource PrimaryHueMidBrush}" VerticalAlignment="Center"/>
-                                    <TextBlock Text="تغيير المستخدم" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{DynamicResource PrimaryHueMidBrush}" />
-                                </StackPanel>
-                            </StackPanel>
-                        </Button>
-                        <Button Name="LogOutBTN"  Click="LogOutBTN_Click" >
-                            <StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="Shutdown"  Margin="0,0,5,0" Width="25" Height="25" Foreground="{DynamicResource PrimaryHueMidBrush}" VerticalAlignment="Center"/>
-                                    <TextBlock Text="اغلاق" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{DynamicResource PrimaryHueMidBrush}" />
-                                </StackPanel>
-                            </StackPanel>
-                        </Button>
-
-                    </StackPanel>
+              <ONA_Clinics:Forms_Switch />
                 </materialDesign:PopupBox>
                 <TextBlock Text="DMS" VerticalAlignment="Center" FontSize="18"/>
             </StackPanel>
@@ -144,12 +121,12 @@
                 </ListView>
             </StackPanel>
         </Grid>
-        <Grid  Grid.Row="1" >
+        <Grid  Grid.Row="1" Name="maingrid" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="221*"/>
                 <ColumnDefinition Width="631*"/>
             </Grid.ColumnDefinitions>
-            <GridSplitter x:Name="gridSplitter" Grid.Column="1" HorizontalAlignment="Left"  Width="5"/>
+            <GridSplitter x:Name="gridSplitter" Foreground="{DynamicResource PrimaryHueMidBrush}" Background="{DynamicResource PrimaryHueMidBrush}" Grid.Column="1" HorizontalAlignment="Left"  Width="5"/>
             <Grid Grid.Column="1" >
                 <StackPanel Orientation="Horizontal" Margin="0,22,20,0" HorizontalAlignment="Right" VerticalAlignment="Top" FlowDirection="RightToLeft">
                     <materialDesign:PackIcon Kind="CardBulleted" Width="30" Height="30" Margin="0,0,5,0" Foreground="{DynamicResource PrimaryHueMidBrush}" VerticalAlignment="Bottom"/>
@@ -162,49 +139,49 @@
                     <materialDesign:PackIcon Kind="Account" Width="30" Height="30" Margin="0,0,5,0" Foreground="{DynamicResource PrimaryHueMidBrush}" VerticalAlignment="Bottom"/>
 
                     <TextBox x:Name="txtEName"
-                		materialDesign:HintAssist.Hint="الأسم عربى" IsEnabled="False" TextAlignment="Center"
+                		materialDesign:HintAssist.Hint="الأسم عربى" IsReadOnly="True" TextAlignment="Center"
                 		Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="196" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,66,20,0" HorizontalAlignment="Right" VerticalAlignment="Top" FlowDirection="RightToLeft">
                     <materialDesign:PackIcon Kind="Account" Width="30" Height="30" Margin="0,0,5,0" Foreground="{DynamicResource PrimaryHueMidBrush}" VerticalAlignment="Bottom"/>
 
-                    <TextBox x:Name="txtAName"
-                		materialDesign:HintAssist.Hint="الاسم انجليزى" IsEnabled="False" TextAlignment="Center"
+                    <TextBox x:Name="txtAName" IsReadOnly="True"
+                		materialDesign:HintAssist.Hint="الاسم انجليزى"  TextAlignment="Center"
                 		Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="196" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,111,20,0" HorizontalAlignment="Right" VerticalAlignment="Top" FlowDirection="RightToLeft">
                     <materialDesign:PackIcon Kind="DateRange" Width="30" Height="30" Margin="0,0,5,0" Foreground="{DynamicResource PrimaryHueMidBrush}" VerticalAlignment="Bottom"/>
 
                     <TextBox x:Name="txtContractStartDate"
-                		materialDesign:HintAssist.Hint="تاريخ بداية العقد " IsEnabled="False" TextAlignment="Center"
+                		materialDesign:HintAssist.Hint="تاريخ بداية العقد " IsReadOnly="True" TextAlignment="Center"
                 		Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="196" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,111,277,0" HorizontalAlignment="Right" VerticalAlignment="Top" FlowDirection="RightToLeft">
                     <materialDesign:PackIcon Kind="DateRange" Width="30" Height="30" Margin="0,0,5,0" Foreground="{DynamicResource PrimaryHueMidBrush}" VerticalAlignment="Bottom"/>
 
                     <TextBox x:Name="txtContractEndtDate"
-                		materialDesign:HintAssist.Hint="تاريخ نهاية العقد " IsEnabled="False" TextAlignment="Center"
+                		materialDesign:HintAssist.Hint="تاريخ نهاية العقد " IsReadOnly="True" TextAlignment="Center"
                 		Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="196" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,163,277,0" HorizontalAlignment="Right" VerticalAlignment="Top" FlowDirection="RightToLeft">
                     <materialDesign:PackIcon Kind="Company" Width="30" Height="30" Margin="0,0,5,0" Foreground="{DynamicResource PrimaryHueMidBrush}" VerticalAlignment="Bottom"/>
 
                     <TextBox x:Name="txtCompName"
-                		materialDesign:HintAssist.Hint="اسم الشركة " IsEnabled="False" TextAlignment="Center"
+                		materialDesign:HintAssist.Hint="اسم الشركة " IsReadOnly="True" TextAlignment="Center"
                 		Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="196" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,22,441,0" HorizontalAlignment="Right" VerticalAlignment="Top" FlowDirection="RightToLeft">
                     <materialDesign:PackIcon Kind="HumanHandsup" Width="30" Height="30" Margin="0,0,5,0" Foreground="{DynamicResource PrimaryHueMidBrush}" VerticalAlignment="Bottom"/>
 
-                    <TextBox x:Name="txtAge"
-                		materialDesign:HintAssist.Hint="العمر" IsEnabled="False" TextAlignment="Center"
+                    <TextBox x:Name="txtAge" IsReadOnly="True"
+                		materialDesign:HintAssist.Hint="العمر"  TextAlignment="Center"
                 		Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="32" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,22,277,0" HorizontalAlignment="Right" VerticalAlignment="Top" FlowDirection="RightToLeft">
                     <materialDesign:PackIcon Kind="DateRange" Width="30" Height="30" Margin="0,0,5,0" Foreground="{DynamicResource PrimaryHueMidBrush}" VerticalAlignment="Bottom"/>
 
-                    <TextBox x:Name="txtBirthDate"
-                		materialDesign:HintAssist.Hint="تاريخ الميلاد " IsEnabled="False" TextAlignment="Center"
+                    <TextBox x:Name="txtBirthDate" IsReadOnly="True"
+                		materialDesign:HintAssist.Hint="تاريخ الميلاد " TextAlignment="Center"
                 		Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="124" />
                 </StackPanel>
                 <Button x:Name="refBTN"   Content="{materialDesign:PackIcon Refresh}" HorizontalAlignment="Right" Margin="0,171,539,0" VerticalAlignment="Top" ToolTip="جديد" Click="refBTN_Click" />
@@ -228,17 +205,16 @@
                         </ComboBox.ItemTemplate>
                     </ComboBox>
                 </StackPanel>
-                <DataGrid x:Name="dgTotal" Margin="8,260,3,0" VerticalAlignment="Top" IsReadOnly="True">
-                    <DataGrid.Columns>
-                        <DataGridTemplateColumn>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Button x:Name="btnDelete"   Content="{materialDesign:PackIcon Delete}"  ToolTip="حذف"  />
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
+                <DataGrid x:Name="dgTotal" Margin="8,260,3,0" VerticalAlignment="Top"  HorizontalGridLinesBrush="{DynamicResource PrimaryHueMidBrush}" VerticalGridLinesBrush="{DynamicResource PrimaryHueMidBrush}"   IsReadOnly="True" GridLinesVisibility="Horizontal">
+                   
                 </DataGrid>
+                <StackPanel Orientation="Horizontal" Margin="0,82,549,0" HorizontalAlignment="Right" VerticalAlignment="Top" FlowDirection="RightToLeft">
+                    <materialDesign:PackIcon Kind="Flag" Width="30" Height="30" Margin="0,0,5,0" Foreground="{DynamicResource PrimaryHueMidBrush}" VerticalAlignment="Bottom"/>
+
+                    <TextBox x:Name="txtflage" Text="Y"
+                        materialDesign:HintAssist.Hint="flag" IsReadOnly="True" TextAlignment="Center"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="32" />
+                </StackPanel>
 
 
 
@@ -247,8 +223,8 @@
             <!-- Foreground="{DynamicResource PrimaryHueMidBrush}" -->
 
 
-            <Grid x:Name="tooth"  Grid.Column="1" Background="#330600FF" Visibility="Hidden">
-                <Border BorderBrush="#3b5998"  Background="White" BorderThickness="2" HorizontalAlignment="Right" Height="364"  VerticalAlignment="Top" Width="428"  Margin="0,78,86,0">
+            <Grid x:Name="tooth"  Grid.Column="1" Background="{DynamicResource MaterialDesignPaper}" Visibility="Hidden">
+                <Border BorderBrush="#3b5998"  Background="White" BorderThickness="2" HorizontalAlignment="Right" Height="364"  VerticalAlignment="Top" Width="428"  Margin="0,78,86,0" KeyDown="Border_KeyDown">
                     <Grid>
 
                         <Button Margin="204,327,0,0" Content="Save" Click="Button_Click_17" HorizontalAlignment="Left" Width="193" />
@@ -289,14 +265,14 @@
                             <CheckBox x:Name="_47"  HorizontalAlignment="Left" Margin="130,202,0,0" VerticalAlignment="Top" Width="15" Checked="AddToothService" Unchecked="SubToothService"/>
                             <CheckBox x:Name="_48"  HorizontalAlignment="Left" Margin="127,181,0,0" VerticalAlignment="Top" Width="15" Checked="AddToothService" Unchecked="SubToothService"/>
                         </Grid>
-                        <Button x:Name="Cancel_Teeth" Margin="0,327,225,0" Content="Cancel" Click="Cancel_Teeth_Click" Height="33" VerticalAlignment="Top" HorizontalAlignment="Right" Width="176" ScrollViewer.VerticalScrollBarVisibility="Hidden"  />
+                        <Button x:Name="Cancel_Teeth" Margin="0,327,225,0" Content="حذف كل العمليات" Click="Cancel_Teeth_Click" Height="33" VerticalAlignment="Top" HorizontalAlignment="Right" Width="176" ScrollViewer.VerticalScrollBarVisibility="Hidden"  />
 
                     </Grid>
                 </Border>
 
             </Grid>
             <Grid >
-                <Border BorderBrush="#3b5998" x:Name="TeethType" Background="White" BorderThickness="2" HorizontalAlignment="Right" Height="218" Margin="0,101,-539,0" VerticalAlignment="Top" Width="404" Visibility="Hidden" KeyDown="TeethType_KeyDown" >
+                <Border BorderBrush="{DynamicResource PrimaryHueMidBrush}" x:Name="TeethType" Background="{DynamicResource MaterialDesignPaper}" BorderThickness="2" HorizontalAlignment="Right" Height="218" Margin="0,101,-539,0" VerticalAlignment="Top" Width="404" Visibility="Hidden" KeyDown="TeethType_KeyDown" >
                     <Grid>
 
                         <Button x:Name="Ok_Teeth" Margin="0,171,151,0" Content="Ok" Height="33" VerticalAlignment="Top" HorizontalAlignment="Right" Width="103"  Click="Ok_Teeth_Click"  />
@@ -352,24 +328,24 @@
                     <materialDesign:PackIcon Kind="CashMultiple" Width="30" Height="30" Margin="0,0,5,0" Foreground="{DynamicResource PrimaryHueMidBrush}" VerticalAlignment="Bottom"/>
 
                     <TextBox x:Name="txtAName1"
-                		materialDesign:HintAssist.Hint="السعر" IsEnabled="False" TextAlignment="Center"
+                		materialDesign:HintAssist.Hint="السعر" IsReadOnly="True" TextAlignment="Center"
                 		Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="168" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,72,10,0" HorizontalAlignment="Right" VerticalAlignment="Top" FlowDirection="RightToLeft">
                     <materialDesign:PackIcon Kind="CashRefund" Width="30" Height="30" Margin="0,0,5,0" Foreground="{DynamicResource PrimaryHueMidBrush}" VerticalAlignment="Bottom"/>
 
                     <TextBox x:Name="txtAName2"
-                		materialDesign:HintAssist.Hint="الخصم" IsEnabled="False" TextAlignment="Center"
+                		materialDesign:HintAssist.Hint="الخصم" IsReadOnly="True" TextAlignment="Center"
                 		Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="168" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,166,10,0" HorizontalAlignment="Right" VerticalAlignment="Top" FlowDirection="RightToLeft">
                     <materialDesign:PackIcon Kind="Cash" Width="30" Height="30" Margin="0,0,5,0" Foreground="{DynamicResource PrimaryHueMidBrush}" VerticalAlignment="Bottom"/>
 
                     <TextBox x:Name="txtAName3"
-                		materialDesign:HintAssist.Hint=" بعد الخصم" IsEnabled="False" TextAlignment="Center"
+                		materialDesign:HintAssist.Hint=" بعد الخصم" IsReadOnly="True" TextAlignment="Center"
                 		Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="168" />
                 </StackPanel>
-                <Button x:Name="refBTN_Copy"   Content="{materialDesign:PackIcon ContentSave}" HorizontalAlignment="Right" Margin="0,233,92,0" VerticalAlignment="Top" ToolTip="حفظ" Click="refBTN_Click" />
+                <Button x:Name="refBTN_Copy"   Content="{materialDesign:PackIcon ContentSave}" HorizontalAlignment="Right" Margin="0,233,92,0" VerticalAlignment="Top" ToolTip="حفظ" Click="refBTN_Copy_Click" />
             </Grid>
 
 

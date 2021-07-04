@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("media/tooth.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("media/stop.png")]
 
 

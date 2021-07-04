@@ -36,6 +36,7 @@ namespace ONA_Clinics
         /// اسم فئة المريض
         /// </summary>
         public static string Class_Name { get; set; }
+
         /// <summary>
         /// الحد الاقصى لكل الخدمات
         /// </summary>
@@ -58,6 +59,23 @@ namespace ONA_Clinics
         /// مجموع استهلاكات المريض
         /// </summary>
         public static string Available { get; set; }
-                
+        /// <summary>
+        /// نسبة تحمل المريض
+        /// </summary>
+        public static double Patient_carrying_ratio { get; set; }
+        /// <summary>
+        /// قيمة الخدمة للمريض
+        /// </summary>
+        public static string CEILING_AMT { get; set; }
+        /// <summary>
+        /// قيمة الاضافة للمريض
+        /// </summary>
+        public static string CARR_AMT { get; set; }        
+        public static string MaxAmtServ { get; set; }
+        public static string PercServ { get; set; }
+        public static string AmtServ { get; set; }
+        public static string FinalAmt { get; set; }
+        public static string FinalAmtDms { get; set; }
+        public static string CardDegree { get; set; }
     }
 }

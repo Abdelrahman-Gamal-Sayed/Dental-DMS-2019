@@ -1,0 +1,17 @@
+﻿<Window x:Class="ONA_Clinics.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:my="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
+
+        xmlns:local="clr-namespace:ONA_Clinics"
+        mc:Ignorable="d"
+
+        Title="Window1" Height="300" Width="459" WindowState="Maximized">
+    <Grid>
+        <my:CrystalReportsViewer HorizontalAlignment="Stretch" Name="crystalReportsViewer111"
+                                 VerticalAlignment="Stretch" IsHitTestVisible="True" ShowPrevPageButton="False" UseLayoutRounding="False" ToggleSidePanel="None" ShowToggleSidePanelButton="False" />
+
+    </Grid>
+</Window>
